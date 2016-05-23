@@ -1,4 +1,4 @@
-﻿namespace Cake.Common.Tools.NuGet.Pack
+﻿namespace Cake.Common.NuGet
 {
     /// <summary>
     /// Represents a NuGet nuspec file

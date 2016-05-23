@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cake.Common.NuGet;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
 

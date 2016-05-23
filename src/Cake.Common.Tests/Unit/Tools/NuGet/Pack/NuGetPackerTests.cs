@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cake.Common.NuGet;
 using Cake.Common.Tests.Fixtures.Tools.NuGet.Packer;
 using Cake.Common.Tests.Properties;
 using Cake.Common.Tools.NuGet;
