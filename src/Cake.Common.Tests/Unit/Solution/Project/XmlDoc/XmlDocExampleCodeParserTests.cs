@@ -24,7 +24,7 @@ namespace Cake.Common.Tests.Unit.Solution.Project.XmlDoc
                 var result = Record.Exception(() => fixture.Parse());
 
                 // Then
-                Assert.IsArgumentNullException(result, "xmlFilePath");
+                AssertEx.IsArgumentNullException(result, "xmlFilePath");
             }
 
             [Fact]
@@ -69,7 +69,7 @@ namespace Cake.Common.Tests.Unit.Solution.Project.XmlDoc
                 var result = Record.Exception(() => fixture.ParseFiles());
 
                 // Then
-                Assert.IsArgumentNullException(result, "pattern");
+                AssertEx.IsArgumentNullException(result, "pattern");
             }
 
             [Fact]
@@ -83,7 +83,7 @@ namespace Cake.Common.Tests.Unit.Solution.Project.XmlDoc
                 var result = Record.Exception(() => fixture.ParseFiles());
 
                 // Then
-                Assert.IsArgumentNullException(result, "pattern");
+                AssertEx.IsArgumentNullException(result, "pattern");
             }
 
             [Fact]
