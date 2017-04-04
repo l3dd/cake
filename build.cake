@@ -110,10 +110,9 @@ Task("Restore-NuGet-Packages")
     .IsDependentOn("Clean")
     .Does(() =>
 {
-    DotNetCoreRestore("./", new DotNetCoreRestoreSettings
+    DotNetCoreRestore("./src/Cake.sln", new DotNetCoreRestoreSettings 
     {
         Verbose = false,
-        Verbosity = DotNetCoreRestoreVerbosity.Warning,
         Sources = new [] {
             "https://www.myget.org/F/xunit/api/v3/index.json",
             "https://dotnet.myget.org/F/dotnet-core/api/v3/index.json",
@@ -124,18 +123,19 @@ Task("Restore-NuGet-Packages")
 });
 
 Task("Build")
-    .IsDependentOn("Patch-Project-Json")
     .IsDependentOn("Restore-NuGet-Packages")
     .Does(() =>
 {
-    var projects = GetFiles("./**/*.xproj");
-    foreach(var project in projects)
+    // Build the solution.
+    var path = MakeAbsolute(new DirectoryPath("./src/Cake.sln"));
+    DotNetCoreBuild(path.FullPath, new DotNetCoreBuildSettings()
     {
-        DotNetCoreBuild(project.GetDirectory().FullPath, new DotNetCoreBuildSettings {
-            VersionSuffix = parameters.Version.DotNetAsterix,
-            Configuration = parameters.Configuration
-        });
-    }
+        Configuration = parameters.Configuration,
+        ArgumentCustomization = args => args
+            .Append("/p:Version={0}", parameters.Version.SemVersion)
+            .Append("/p:AssemblyVersion={0}", parameters.Version.Version)
+            .Append("/p:FileVersion={0}", parameters.Version.Version)
+    });
 });
 
 Task("Run-Unit-Tests")

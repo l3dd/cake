@@ -46,6 +46,10 @@
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="1.3.2" />
     <PackageReference Include="System.Diagnostics.FileVersionInfo" Version="4.0.0" />
     <PackageReference Include="System.Threading.Thread" Version="4.0.0" />
+    <PackageReference Include="Microsoft.NET.Sdk">
+      <Version>1.0.0-alpha-20161104-2</Version>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">

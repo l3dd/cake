@@ -51,6 +51,10 @@
     <PackageReference Include="System.Runtime.Serialization.Json" Version="4.0.2" />
     <PackageReference Include="System.Xml.ReaderWriter" Version="4.0.11" />
     <PackageReference Include="System.ComponentModel.TypeConverter" Version="4.1.0" />
+    <PackageReference Include="Microsoft.NET.Sdk">
+      <Version>1.0.0-alpha-20161104-2</Version>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.6' ">

@@ -13,7 +13,7 @@ namespace Cake.Common.Tests.Unit.Solution.Project.XmlDoc
     {
         public sealed class TheParseMethod
         {
-             [Fact]
+            [Fact]
             public void Should_Throw_If_Xml_Path_Was_Null()
             {
                 // Given
@@ -58,7 +58,7 @@ namespace Cake.Common.Tests.Unit.Solution.Project.XmlDoc
 
         public sealed class TheParseFilesMethod
         {
-             [Fact]
+            [Fact]
             public void Should_Throw_If_Pattern_Was_Null()
             {
                 // Given
